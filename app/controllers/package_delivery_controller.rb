@@ -10,7 +10,7 @@ class PackageDeliveryController < ApplicationController
     username = user[params[:full_name]][:id]
     chat = user[params[:full_name]][:chat_id]
     Telegram::Bot::Client.run(ENV['BOT_TOKEN']) do |bot|
-      bot.api.send_message(chat_id: chat, text: "Halo pengiriman paket untuk #{username} sudah dikirimkan ya, silakan cek detailnya di @frontliner_bot")
+      bot.api.send_message(chat_id: chat, text: "Halo pengiriman paket untuk #{username} sudah tiba, silakan ambil di Front Office")
     end
     render :json => params
   end
